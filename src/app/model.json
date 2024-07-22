@@ -1,0 +1,249 @@
+{
+  "voices_list": [
+    {
+      "voice_name": "bg-BG-KalinaNeural",
+      "description": "Microsoft Server Speech Text to Speech Voice (bg-BG, KalinaNeural)",
+      "gender": "Female",
+      "language": "Bulgarian",
+      "country": "Bulgaria"
+    },
+    {
+      "voice_name": "cs-CZ-VlastaNeural",
+      "description": "Microsoft Server Speech Text to Speech Voice (cs-CZ, VlastaNeural)",
+      "gender": "Female",
+      "language": "Czech",
+      "country": "Czech Republic"
+    },
+    {
+      "voice_name": "da-DK-ChristelNeural",
+      "description": "Microsoft Server Speech Text to Speech Voice (da-DK, ChristelNeural)",
+      "gender": "Female",
+      "language": "Danish",
+      "country": "Denmark"
+    },
+    {
+      "voice_name": "de-DE-KatjaNeural",
+      "description": "Microsoft Server Speech Text to Speech Voice (de-DE, KatjaNeural)",
+      "gender": "Female",
+      "language": "German",
+      "country": "Germany"
+    },
+    {
+      "voice_name": "en-AU-NatashaNeural",
+      "description": "Microsoft Server Speech Text to Speech Voice (en-AU, NatashaNeural)",
+      "gender": "Female",
+      "language": "English",
+      "country": "Australia"
+    },
+    {
+      "voice_name": "en-CA-ClaraNeural",
+      "description": "Microsoft Server Speech Text to Speech Voice (en-CA, ClaraNeural)",
+      "gender": "Female",
+      "language": "English",
+      "country": "Canada"
+    },
+    {
+      "voice_name": "en-GB-MiaNeural",
+      "description": "Microsoft Server Speech Text to Speech Voice (en-GB, MiaNeural)",
+      "gender": "Female",
+      "language": "English",
+      "country": "United Kingdom"
+    },
+    {
+      "voice_name": "en-IN-NeerjaNeural",
+      "description": "Microsoft Server Speech Text to Speech Voice (en-IN, NeerjaNeural)",
+      "gender": "Female",
+      "language": "English",
+      "country": "India"
+    },
+    {
+      "voice_name": "en-US-AriaNeural",
+      "description": "Microsoft Server Speech Text to Speech Voice (en-US, AriaNeural)",
+      "gender": "Female",
+      "language": "English",
+      "country": "United States"
+    },
+    {
+      "voice_name": "en-US-GuyNeural",
+      "description": "Microsoft Server Speech Text to Speech Voice (en-US, GuyNeural)",
+      "gender": "Male",
+      "language": "English",
+      "country": "United States"
+    },
+    {
+      "voice_name": "en-US-JennyNeural",
+      "description": "Microsoft Server Speech Text to Speech Voice (en-US, JennyNeural)",
+      "gender": "Female",
+      "language": "English",
+      "country": "United States"
+    },
+    {
+      "voice_name": "es-ES-ElviraNeural",
+      "description": "Microsoft Server Speech Text to Speech Voice (es-ES, ElviraNeural)",
+      "gender": "Female",
+      "language": "Spanish",
+      "country": "Spain"
+    },
+    {
+      "voice_name": "es-MX-DaliaNeural",
+      "description": "Microsoft Server Speech Text to Speech Voice (es-MX, DaliaNeural)",
+      "gender": "Female",
+      "language": "Spanish",
+      "country": "Mexico"
+    },
+    {
+      "voice_name": "fr-CA-SylvieNeural",
+      "description": "Microsoft Server Speech Text to Speech Voice (fr-CA, SylvieNeural)",
+      "gender": "Female",
+      "language": "French",
+      "country": "Canada"
+    },
+    {
+      "voice_name": "fr-FR-DeniseNeural",
+      "description": "Microsoft Server Speech Text to Speech Voice (fr-FR, DeniseNeural)",
+      "gender": "Female",
+      "language": "French",
+      "country": "France"
+    },
+    {
+      "voice_name": "hi-IN-SwaraNeural",
+      "description": "Microsoft Server Speech Text to Speech Voice (hi-IN, SwaraNeural)",
+      "gender": "Female",
+      "language": "Hindi",
+      "country": "India"
+    },
+    {
+      "voice_name": "hu-HU-NoemiNeural",
+      "description": "Microsoft Server Speech Text to Speech Voice (hu-HU, NoemiNeural)",
+      "gender": "Female",
+      "language": "Hungarian",
+      "country": "Hungary"
+    },
+    {
+      "voice_name": "id-ID-GadisNeural",
+      "description": "Microsoft Server Speech Text to Speech Voice (id-ID, GadisNeural)",
+      "gender": "Female",
+      "language": "Indonesian",
+      "country": "Indonesia"
+    },
+    {
+      "voice_name": "it-IT-ElsaNeural",
+      "description": "Microsoft Server Speech Text to Speech Voice (it-IT, ElsaNeural)",
+      "gender": "Female",
+      "language": "Italian",
+      "country": "Italy"
+    },
+    {
+      "voice_name": "ja-JP-NanamiNeural",
+      "description": "Microsoft Server Speech Text to Speech Voice (ja-JP, NanamiNeural)",
+      "gender": "Female",
+      "language": "Japanese",
+      "country": "Japan"
+    },
+    {
+      "voice_name": "ko-KR-SunHiNeural",
+      "description": "Microsoft Server Speech Text to Speech Voice (ko-KR, SunHiNeural)",
+      "gender": "Female",
+      "language": "Korean",
+      "country": "South Korea"
+    },
+    {
+      "voice_name": "nl-NL-ColetteNeural",
+      "description": "Microsoft Server Speech Text to Speech Voice (nl-NL, ColetteNeural)",
+      "gender": "Female",
+      "language": "Dutch",
+      "country": "Netherlands"
+    },
+    {
+      "voice_name": "pl-PL-ZofiaNeural",
+      "description": "Microsoft Server Speech Text to Speech Voice (pl-PL, ZofiaNeural)",
+      "gender": "Female",
+      "language": "Polish",
+      "country": "Poland"
+    },
+    {
+      "voice_name": "pt-BR-FranciscaNeural",
+      "description": "Microsoft Server Speech Text to Speech Voice (pt-BR, FranciscaNeural)",
+      "gender": "Female",
+      "language": "Portuguese",
+      "country": "Brazil"
+    },
+    {
+      "voice_name": "pt-PT-RaquelNeural",
+      "description": "Microsoft Server Speech Text to Speech Voice (pt-PT, RaquelNeural)",
+      "gender": "Female",
+      "language": "Portuguese",
+      "country": "Portugal"
+    },
+    {
+      "voice_name": "ro-RO-AlinaNeural",
+      "description": "Microsoft Server Speech Text to Speech Voice (ro-RO, AlinaNeural)",
+      "gender": "Female",
+      "language": "Romanian",
+      "country": "Romania"
+    },
+    {
+      "voice_name": "ru-RU-SvetlanaNeural",
+      "description": "Microsoft Server Speech Text to Speech Voice (ru-RU, SvetlanaNeural)",
+      "gender": "Female",
+      "language": "Russian",
+      "country": "Russia"
+    },
+    {
+      "voice_name": "sv-SE-SofieNeural",
+      "description": "Microsoft Server Speech Text to Speech Voice (sv-SE, SofieNeural)",
+      "gender": "Female",
+      "language": "Swedish",
+      "country": "Sweden"
+    },
+    {
+      "voice_name": "th-TH-PremwadeeNeural",
+      "description": "Microsoft Server Speech Text to Speech Voice (th-TH, PremwadeeNeural)",
+      "gender": "Female",
+      "language": "Thai",
+      "country": "Thailand"
+    },
+    {
+      "voice_name": "tr-TR-EmelNeural",
+      "description": "Microsoft Server Speech Text to Speech Voice (tr-TR, EmelNeural)",
+      "gender": "Female",
+      "language": "Turkish",
+      "country": "Turkey"
+    },
+    {
+      "voice_name": "vi-VN-HoaiMyNeural",
+      "description": "Microsoft Server Speech Text to Speech Voice (vi-VN, HoaiMyNeural)",
+      "gender": "Female",
+      "language": "Vietnamese",
+      "country": "Vietnam"
+    },
+    {
+      "voice_name": "zh-CN-XiaoxiaoNeural",
+      "description": "Microsoft Server Speech Text to Speech Voice (zh-CN, XiaoxiaoNeural)",
+      "gender": "Female",
+      "language": "Chinese",
+      "country": "China"
+    },
+    {
+      "voice_name": "zh-CN-YunyangNeural",
+      "description": "Microsoft Server Speech Text to Speech Voice (zh-CN, YunyangNeural)",
+      "gender": "Female",
+      "language": "Chinese",
+      "country": "China"
+    },
+    {
+      "voice_name": "zh-HK-HiuMaanNeural",
+      "description": "Microsoft Server Speech Text to Speech Voice (zh-HK, HiuMaanNeural)",
+      "gender": "Female",
+      "language": "Chinese",
+      "country": "Hong Kong"
+    },
+    {
+      "voice_name": "zh-TW-HsiaoChenNeural",
+      "description": "Microsoft Server Speech Text to Speech Voice (zh-TW, HsiaoChenNeural)",
+      "gender": "Female",
+      "language": "Chinese",
+      "country": "Taiwan"
+    }
+  ]
+}

@@ -1,95 +1,175 @@
-import Image from "next/image";
+"use client";
 import styles from "./page.module.css";
+import Header from "./components/header/Header";
+import Footer from "./components/footer/Footer";
+import modelList from "./model.json";
+import { useEffect, useState } from "react";
+import LoadingDots from "./loadingDots";
+import Modal from "./components/modal/Modal";
 
 export default function Home() {
+  const [text, setText] = useState("");
+  const [voices, setVoices] = useState([]);
+  const [selectedGender, setSelectedGender] = useState("");
+  const [selectedLanguage, setSelectedLanguage] = useState("");
+  const [selectedCountry, setSelectedCountry] = useState("");
+  const [filteredModels, setFilteredModels] = useState([]);
+  const [model, setModel] = useState("");
+  const [message, setMessage] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const [url, setUrl] = useState("");
+
+  const handleClear = () => {
+    setText("");
+  };
+
+  useEffect(() => {
+    setVoices(modelList["voices_list"]);
+  }, []);
+
+  useEffect(() => {
+    const filtered = voices.filter(
+      (voice) =>
+        (selectedGender ? voice.gender === selectedGender : true) &&
+        (selectedLanguage ? voice.language === selectedLanguage : true) &&
+        (selectedCountry ? voice.country === selectedCountry : true)
+    );
+    setFilteredModels(filtered);
+  }, [selectedGender, selectedLanguage, selectedCountry, voices]);
+
+  const handleGetAudio = async () => {
+    if (!model) {
+      setMessage("Please select a model...");
+      return;
+    }
+
+    setMessage("");
+    setIsLoading(true);
+
+    try {
+      const response = await fetch("/api/getSpeech", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          text: text,
+          voice: model,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("API request failed...");
+      }
+
+      const data = await response.json();
+
+      if (data && data.downloadUrl) {
+        setUrl(data.downloadUrl);
+        setShowModal(true);
+        setText("");
+      } else {
+        throw new Error("Invalid response format...");
+      }
+    } catch {
+      setMessage("Failed to fetch...");
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const uniqueValues = (key) => [...new Set(voices.map((voice) => voice[key]))];
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <div className={styles.container}>
+      <Header />
+      <div className={styles.content}>
+        <div className={styles.textContent}>
+          <div className={styles.toolbar}>
+            <button className={styles.toolbarButton} onClick={handleClear}>
+              Clear
+            </button>
+          </div>
+          <textarea
+            className={styles.textarea}
+            placeholder="Enter your text here..."
+            value={text}
+            onChange={(e) => setText(e.target.value)}
+          />
+        </div>
+        <div className={styles.controls}>
+          <select
+            className={styles.dropdown}
+            value={selectedGender}
+            onChange={(e) => setSelectedGender(e.target.value)}
           >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+            <option value="">Select Gender</option>
+            {uniqueValues("gender")
+              .sort()
+              .map((gender, index) => (
+                <option key={index} value={gender}>
+                  {gender}
+                </option>
+              ))}
+          </select>
+
+          <select
+            className={styles.dropdown}
+            value={selectedLanguage}
+            onChange={(e) => setSelectedLanguage(e.target.value)}
+          >
+            <option value="">Select Language</option>
+            {uniqueValues("language")
+              .sort()
+              .map((language, index) => (
+                <option key={index} value={language}>
+                  {language}
+                </option>
+              ))}
+          </select>
+
+          <select
+            className={styles.dropdown}
+            value={selectedCountry}
+            onChange={(e) => setSelectedCountry(e.target.value)}
+          >
+            <option value="">Select Country</option>
+            {uniqueValues("country")
+              .sort()
+              .map((country, index) => (
+                <option key={index} value={country}>
+                  {country}
+                </option>
+              ))}
+          </select>
+
+          <select
+            className={styles.dropdown}
+            value={model}
+            onChange={(e) => setModel(e.target.value)}
+          >
+            <option value="">Select Model</option>
+            {filteredModels.map((voice, index) => (
+              <option key={index} value={voice.voice_name}>
+                {voice.description}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div className={styles.cta}>
+          <div className={styles.msg}>{message}</div>
+          <button
+            className={styles.button}
+            onClick={handleGetAudio}
+            disabled={isLoading}
+          >
+            {isLoading ? <LoadingDots /> : "Get Audio"}
+          </button>
         </div>
       </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+      {showModal && url && <Modal setShowModal={setShowModal} url={url} />}{" "}
+      <Footer />
+    </div>
   );
 }
